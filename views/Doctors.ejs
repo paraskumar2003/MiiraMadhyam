@@ -1,0 +1,73 @@
+<%-include("partials/Header")  %> 
+<div class="page-container" data-aos="fade-in">
+    <div class="main-container">
+      <div class="list-box row justify-content-between">
+              <div class="col-lg-8 list-container" data-aos="fade-left" data-aos-delay="50">
+                  <h1>200+ doctors available in Agra</h1>
+                      <div class="list" data-aos="fade-left" data-aos-delay="150">
+                          
+                          <% doctorsToRender.forEach((item)=>{ %>
+                            <div class="profile-card" data-aos="fade-in" data-aos-delay="50">
+                                <div class="profile flex">
+                                    <div class="img-container">
+                                        <img src="<%=item.img%>">
+                                    </div>
+                                    <div class="profile-info flex jcb fdc">
+                                        <div>
+                                             <h2 class="name"><a><%= item.name %> </a></h2>
+                                             <p><%=item.expertise%></p>
+                                             <p><%= item.experience %> </p>
+                                             <p><span class="adress"><%= item.address %> </span id="bull">&bull;<span class="clinic"><%= item.clinicName %> </span></p>
+                                             <p><span></span><%= item.fees %></p>
+                                        </div>
+                                             <div class="btns flex jcb aic">
+                                                <button class="btn btn-about"><a>View Profile <span><i class="fa-solid fa-angle-down"></i></span></a></button>
+                                             </div>
+                                             
+                                             </div>
+                                          </div>
+                                          <div class="about-text">
+                                            <div class="text">
+                                                <p><%=item.aboutDoctor  %> </p>
+                                            
+                                            </div>
+                                          </div>
+                              </div>
+                                    <% }) %> 
+                                </div>
+                          
+                          
+                                <hr>
+                      </div>
+                      <div class="col-lg-4 side-panel"></div>
+              </div>
+      </div>
+    </div>
+</div>
+
+
+
+
+<!-- js -->
+<script>
+    const profileCards = document.querySelectorAll(".profile-card");
+
+    profileCards.forEach((profileCard)=>{
+        const aboutBtn = profileCard.querySelector(".btn-about");
+        const aboutText = profileCard.querySelector(".about-text");
+        const textContainer = profileCard.querySelector(".text");
+       console.log( textContainer.getBoundingClientRect().height);
+
+        aboutBtn.onclick = ()=>{
+            profileCards.forEach((item)=>{
+                console.log(item);
+                if(item === profileCard){
+                    console.log(profileCard);
+                    aboutText.classList.toggle('active-text');
+                }
+            })
+        }       
+    })
+</script>
+<!-- js end -->
+<%-include("partials/Footer")  %> 

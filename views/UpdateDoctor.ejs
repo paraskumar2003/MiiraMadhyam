@@ -1,0 +1,74 @@
+<%-include('partials/Header')  %> 
+<div class="upload-container">
+
+
+    <div class="form-container-wrapper">
+        <div class="heading">
+            <div class="add-row flex jcb aic">
+                <div class="add-column add-doctor">
+                    <h1>Update Doctor</h1>
+                </div>
+                
+            </div>
+            <div class="underline-bar alfs">
+                <div class="underline-fill"></div>
+            </div>
+        </div>
+
+
+        <div class="form-container">
+
+            <form action="/updateDoctor" method="post">
+                <div class="flex jcb aic hidden">
+                    <input type="text"  
+                        value="<%=item._id%>" name="_id">
+                </div>
+                <div class="flex jcb aic">
+                    <label for="name">Name</label>
+                    <input type="text"  
+                        value="<%=item.name%>" name="name">
+                </div>
+                <div class="flex jcb aic">
+                    <label for="name">Expertise</label>
+                    <input type="text"  
+                        value="<%=item.expertise%>" name="expertise">
+                </div>
+                <div class="flex jcb aic">
+                    <label for="name">Experience</label>
+                    <input type="text"  
+                        value="<%=item.experience%>" name="experience">
+                </div>
+                <div class="flex jcb aic">
+                    <label for="name">Address</label>
+                    <input type="text"  
+                        value="<%=item.address%>" name="address">
+                </div>
+                <div class="flex jcb aic">
+                    <label for="name">Clinic Name ( If any )</label>
+                    <input type="text"  
+                        value="<%=item.clinicName%>" name="clinicName">
+                </div>
+                <div class="flex jcb aic">
+                    <label for="name">Fees</label>
+                    <input type="text"  
+                        value="<%=item.fees%>" name="fees">
+                </div>
+                <div class="flex jcb fdc">
+                    <label for="desc">More Information about Doctor</label>
+                    <input type="text" name="aboutDoctor" value="<%=item.aboutDoctor%>" rows="4"
+                            placeholder="">
+                </div>
+                <div>
+                    <button class="btn-update btn" type="submit" name="action" value="update"><i class="fas fa-edit" style="padding-right:5px;"></i>Update</button>
+                    <button class="btn btn-submit" type="submit" name="action" value="delete"><i class="fas fa-xmark" style="padding-right:5px;"></i>Cancel</button> 
+            </form>
+        </div>
+
+    </div>
+
+
+
+
+        
+        
+</div>

@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MiiraMadhyam</title>
+ 
+    <!-- aos -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+    <!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Font awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Bootstrap CDN -->
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <!-- Bootstrap JS -->
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../Styles/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="flex jcb aic">
+        <div class="logo-container d-flex jcb aic">
+            
+          <!-- <img src="" alt="" class="logo"> -->
+          <a href="/"><img src="../Images/miira-logo.png" alt="logo"></a>
+          <button class="btn nav-toggle"><i class="fas fa-bars"></i></button>
+        </div>
+        <div class="links-container off">
+          <ul class="flex jcb aic">
+            <li>
+              <a href="/" class="scroll-link">Home</a>
+              <div></div>
+            </li>
+            <li>
+              <a href="/schemes" class="scroll-link">Schemes</a>
+              <div></div>
+            </li>
+            <li>
+              <a href="/doctors" class="scroll-link">Doctors</a>
+              <div></div>
+            </li>
+            <li>
+              <a href="#" class="scroll-link">Contact</a>
+              <div></div>
+            </li>
+            <li>
+              <a href="/about" class="scroll-link">About</a>
+              <div></div>
+            </li>
+          </ul>
+        </div>
+        <ul class="btns-security flex aic jcb">
+            <li>
+              <a href="/register" class="social-link change-password">Change password</i></a>
+            </li>
+          <li>
+            <a href="logout" class="social-link logout"><i class="fa-solid fa-right-from-bracket"></i></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+     <!-- script for animation -->
+     <script>
+        const navToggle = document.querySelector(".nav-toggle");
+        navToggle.onclick = () => {
+          const linksContainer = document.querySelector(".links-container");
+          linksContainer.classList.toggle("on");
+          linksContainer.classList.toggle("off");
+        };
+      </script>
+      <!-- script end -->
+
+    <div class="upload-container row" data-aos="fade-in" data-aos-delay="50">
+        <div class="alert-container <%= alert %>">
+            <!-- alert -->
+    <div class="alert alert-danger" role="alert">
+    A simple danger alert—check it out!
+    </div>
+        </div>
+      
+    
+
+
+
+        <div class="form-container-wrapper col-lg-7" data-aos="slide-up" data-aos-delay="75">
+           
+            
+            <div class="heading">
+                <div class="add-row flex jcb aic">
+                    <div class="add-column add-doctor">
+                        <h1>Add Doctor</h1>
+                    </div>
+                    <div class="add-column add-scheme">
+                        <h1 class="faded">Add Scheme</h1>
+                    </div>
+                </div>
+                <div class="underline-bar alfs">
+                    <div class="underline-fill"></div>
+                </div>
+            </div>
+
+
+            <div class="form-container" data-aos="slide-up" data-aos-delay="150">
+                <form action="/uploadDoctor" method="post" enctype="multipart/form-data">
+                    <div class="flex jcb aic">
+                        <label for="name">Name</label>
+                        <input type="text"  
+                            value="" name="name" required>
+                    </div>
+                    <div class="flex jcb aic">
+                        <label for="name">Expertise</label>
+                        <input type="text"  
+                            value="" name="expertise" required>
+                    </div>
+                    <div class="flex jcb aic">
+                        <label for="name">Experience</label>
+                        <input type="text"  
+                            value="" name="experience">
+                    </div>
+                    <div class="flex jcb aic">
+                        <label for="name">Address</label>
+                        <input type="text"  
+                            value="" name="address">
+                    </div>
+                    <div class="flex jcb aic">
+                        <label for="name">Clinic Name ( If any )</label>
+                        <input type="text"  
+                            value="" name="clinicName">
+                    </div>
+                    <div class="flex jcb aic">
+                        <label for="name">Fees</label>
+                        <input type="text"  
+                            value="" name="fees">
+                    </div>
+                    <div class="flex jcb fdc">
+                        <label for="desc">More Information about Doctor</label>
+                        <input type="text" name="aboutDoctor" value="" rows="4"
+                                placeholder="">
+                    </div>
+                    <div class="flex jcb">
+                        <label for="image">Upload Image <span><p class="image-warning">(Image size shoul be less than 200kb)</p></span>
+                        </label>
+                        <input type="file" id="image"
+                            name="img" value="" required>
+                    </div>
+                    <div>
+                        <button class="btn btn-submit" type="submit"><i class="fas fa-plus" style="padding-right:5px;"></i>Add New Doctor</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <div class="other-details-wrapper col-lg-4">
+               <div class="gallery-form-wrapper">
+                <div class="heading">
+                    <h1>Add To Gallery</h1>
+                    <div class="underline-bar">
+                        <div class="underline-fill"></div>
+                    </div>
+                </div>
+                <div class="form-container" data-aos="slide-up" data-aos-delay="150">
+                    <form action="/addGalleryImage" method="post" enctype="multipart/form-data">
+                        
+                        
+                        <div class="flex jcb fdc">
+                            <label for="desc">Description about Image.</label>
+                            <input type="text" name="desc" value="" rows="4"
+                                    placeholder="" required>
+                        </div>
+                        <div class="flex jcb">
+                            <label for="image">Upload Image <span><p class="image-warning">(Image size shoul be less than 200kb)</p></span> </label>
+                            <input type="file" id="image"
+                                name="img" value="" required>
+                        </div>
+                        <div>
+                            <button class="btn btn-submit" type="submit"><i class="fas fa-plus" style="padding-right:5px;"></i>Add To Gallery</button>
+                        </div>
+                    </form>
+                </div>
+               </div>
+               <div class="carousel-form-wrapper">
+                <div class="heading">
+                    <h1>Add Banner</h1>
+                    <div class="underline-bar">
+                        <div class="underline-fill"></div>
+                    </div>
+                </div>
+                <div class="form-container" data-aos="slide-up" data-aos-delay="150">
+                    <form action="/addBannerImage" method="post" enctype="multipart/form-data">                        
+                        <div class="flex jcb fdc">
+                        <div class="flex jcb">
+                            <label for="image">Upload Image <span><p class="image-warning">(Image size shoul be less than 700kb)</p></span> </label>
+                            <input type="file" id="image"
+                                name="img" value="" required>
+                        </div>
+                        <div>
+                            <button class="btn btn-submit" type="submit"><i class="fas fa-plus" style="padding-right:5px;"></i>Add To Banners</button>
+                        </div>
+                    </form>
+                    <hr>
+                    <div class="banner-list">
+                        <%banners.forEach((item)=>{%>
+                            <div class="banner-item flex jcb aic">
+                                <img src="<%=item.img%>" alt="">
+                                <div><form action="/deleteBanner" method="post">
+                                    <input class="hidden" type="text" name="id" value="<%=item._id%>">
+                                    <button type="submit" class="btn btn-delete">
+                                        Delete <span><i class="fas fa-trash"></i></span>
+                                    </button>
+                                </form></div>
+                            </div>
+                        <%})%>
+                    </div>
+                </div>
+               </div>
+        </div>
+
+
+
+
+            
+            
+    </div>
+
+
+
+
+    <!-- Script -->
+    <script>
+
+        const addDoctor = document.querySelector(".add-doctor");
+        const addScheme = document.querySelector(".add-scheme");
+        const addDoctorH1 = document.querySelector(".add-doctor h1");
+        const addSchemeH1 = document.querySelector(".add-scheme h1");
+        const underlineBar = document.querySelector(".underline-bar");
+        const formContainer = document.querySelector(".form-container");
+
+        addScheme.onclick = ()=>{
+            addDoctorH1.classList.add('faded');
+            addSchemeH1.classList.remove('faded');
+            underlineBar.classList.remove('alfs');
+            underlineBar.classList.add('alfe');
+            formContainer.innerHTML = `<form action="/uploadScheme" method="POST" enctype="multipart/form-data"  data-aos="fade-in" data-aos-offset="200">
+                <div class="flex jcb aic">
+                        <label for="name">Name</label>
+                        <input type="text"  
+                        value="" name="name" required>
+                    </div>
+                    <div class="flex jcb aic">
+                        <label for="name">Issue By</label>
+                        <input type="text"  
+                            value="" name="issueBy" required>
+                    </div>
+                    <div class="flex jcb aic">
+                        <label for="name">Benifit</label>
+                        <input type="text"  
+                            value="" name="keyFeature">
+                            </div>
+                    <div class="flex jcb aic">
+                        <label for="name">Applicable</label>
+                        <input type="text"  
+                            value="" name="applicant">
+                    </div>
+                    <div class="flex jcb aic">
+                        <label for="name">Apply Link</label>
+                        <input type="text"  
+                            value="" name="applyLink">
+                    </div>
+                    <div class="flex jcb fdc">
+                        <label for="desc">More Information about Scheme</label>
+                        <input type="text" name="aboutScheme" value="" rows="4"
+                                placeholder="">
+                        </div>
+                    <div class="flex jcb">
+                        <label for="image">Upload Image <span><p class="image-warning">(Image size shoul be less than 200kb)</p></span></label>
+                        <input type="file" id="image"
+                        name="img" value="" required>
+                        </div>
+                        <div>
+                            <button class="btn btn-submit" type="submit"><i class="fas fa-plus" style="padding-right:5px;"></i>Add New Scheme</button>
+                            </div>
+                </form>`;
+        }
+        addDoctor.onclick = ()=>{
+            addSchemeH1.classList.add('faded');
+            addDoctorH1.classList.remove('faded');
+            underlineBar.classList.remove('alfe');
+            underlineBar.classList.add('alfs');
+            formContainer.innerHTML=`<form action="/uploadDoctor" method="POST" enctype="multipart/form-data"  data-aos="fade-in" data-aos-offset="200">
+                    <div class="flex jcb aic">
+                        <label for="name">Name</label>
+                        <input type="text"  
+                            value="" name="name" required>
+                    </div>
+                    <div class="flex jcb aic">
+                        <label for="name">Expertise</label>
+                        <input type="text"  
+                            value="" name="expertise" required>
+                    </div>
+                    <div class="flex jcb aic">
+                        <label for="name">Experience</label>
+                        <input type="text"  
+                            value="" name="experience">
+                    </div>
+                    <div class="flex jcb aic">
+                        <label for="name">Address</label>
+                        <input type="text"  
+                            value="" name="address">
+                    </div>
+                    <div class="flex jcb aic">
+                        <label for="name">Clinic Name ( If any )</label>
+                        <input type="text"  
+                            value="" name="clinicName">
+                    </div>
+                    <div class="flex jcb aic">
+                        <label for="name">Fees</label>
+                        <input type="text"  
+                            value="" name="fees">
+                    </div>
+                    <div class="flex jcb fdc">
+                        <label for="desc">More Information about Doctor</label>
+                        <input type="text" name="aboutDoctor" value="" rows="4"
+                                placeholder="">
+                    </div>
+                    <div class="flex jcb">
+                        <label for="image">Upload Image <span><p class="image-warning">(Image size shoul be less than 200kb)</p></span></label>
+                        <input type="file" id="image"
+                            name="img" value=""  required>
+                    </div>
+                    <div>
+                        <button class="btn btn-submit" type="submit"><i class="fas fa-plus" style="padding-right:5px;"></i>Add New Doctor</button>
+                    </div>
+                </form>`;
+        }
+    </script>
+    <!-- Script End -->
+
+
+    <!-- temp comment -->
+     <div class="main-container mt-4">
+        <div class="doctor-container">
+            <div class="col-lg-8 list-container">
+                <h1>Data of <%=doctors.length%> doctors has been uploaded.</h1>
+                    <div class="list" data-aos="fade-in">
+                        
+                        <% doctors.forEach((item)=>{ %>
+                          <div class="profile-card" data-aos="fade-in">
+                              <div class="profile flex">
+                                  <div class="img-container">
+                                      <img src="<%=item.img%>">
+                                  </div>
+                                  <div class="profile-info flex fdc jcb">
+                                    <div>
+                                           <h2 class="name"><a><%= item.name %> </a></h2>
+                                           <p><%=item.expertise%></p>
+                                           <p><%= item.experience %> </p>
+                                           <p><span class="adress"><%= item.address %> </span id="bull">&bull;<span class="clinic"><%= item.clinicName %> </span></p>
+                                           <% if(item.fees !== null){%>
+                                           <p><%=item.fees%></p>
+                                           <%}%>
+                                        </div>       
+                                           <div class="btns flex jcb aic">
+                                              <button class="btn btn-about"><a>View Profile <span><i class="fa-solid fa-angle-down"></i></span></a></button>
+                                              <div class="btn-adminSide flex">
+                                                <form action="/deleteDoctor" method="post">
+                                                    <div class="hidden">
+                                                        <input type="text" name="name" value="<%=item.name%>">
+                                                    </div>
+                                                    <button style="background-color: rgba(240, 0, 0,0.2);margin-right: 10px;" class="btn btn-delete">Delete <span><i class="fas fa-trash"></i></span></button>
+                                                </form>
+                                                <form action="/renderUpdateDoctor" method="post">
+                                                    <div class="hidden">
+                                                        <input type="text" name="name" value="<%=item.name%>">
+                                                    </div>
+                                                    <button style="background-color: rgba(0, 80, 0,0.2);" class="btn btn-update">Update <span><i class="fas fa-edit"></i></span></button>
+                                                </form>
+                                                
+                                              </div>
+                                           </div>
+                                           
+                                           </div>
+                                        </div>
+                                        <div class="about-text">
+                                          <div class="text">
+                                              <p><%=item.aboutDoctor  %> </p>
+                                          
+                                          </div>
+                                        </div>
+                            </div>
+                                  <% }) %> 
+                              </div>
+                        
+                        
+                              <hr>
+                    </div>
+        </div>
+        <div class="col-lg-8 list-container">
+            <h1>Data of <%=schemes.length%> schemes has been uploaded.</h1>
+                <div class="list" data-aos="fade-in">
+
+                   <% schemes.forEach((item)=>{ %>
+                      <div class="profile-card" data-aos="fade-in">
+                          <div class="profile flex">
+                              <div class="img-container">
+                                  <img src="<%=item.img%>">
+                              </div>
+                              <div class="profile-info flex jcb fdc">
+                                    <div>
+                                       <h2 class="name"><a><%= item.name %> </a></h2>
+                                       <p> <%= item.issueBy %> </p>
+                                       <p><%= item.keyFeature %> </p>
+                                       <p><%= item.applicant %> </p>
+                                    </div>       
+                                       <div class="btns flex jcb aic">
+                                          <button class="btn btn-about"><a>Read More<span><i class="fa-solid fa-angle-down"></i></span></a></button>
+                                          <div class="btn-adminSide flex">
+                                            <form action="/deleteScheme" method="post">
+                                                <div class="hidden">
+                                                    <input type="text" name="name" value="<%=item.name%>">
+                                                </div>
+                                                <button style="background-color: rgba(240, 0, 0,0.2);margin-right: 10px;" class="btn btn-delete">Delete <span><i class="fas fa-trash"></i></span></button>
+                                            </form>
+                                            <form action="/renderUpdateScheme" method="post">
+                                                <div class="hidden">
+                                                    <input type="text" name="name" value="<%=item.name%>">
+                                                </div>
+                                                <button style="background-color: rgba(0, 80, 0,0.2);" class="btn btn-update">Update <span><i class="fas fa-edit"></i></span></button>
+                                            </form>
+                                            
+                                          </div>
+                                       </div>
+                                       
+                                       </div>
+                                    </div>
+                                    <div class="about-text">
+                                      <div class="text">
+                                          <p><%= item.aboutScheme %> </p>
+                                      </div>
+                                    </div>
+                           </div>
+                  <% }) %> 
+
+
+
+                      
+                       
+                    <hr>      
+                 </div>
+                    
+                    
+                          
+                </div>
+    </div>
+    <!-- end -->
+
+
+
+
+    <!-- js -->
+<script>
+    const profileCards = document.querySelectorAll(".profile-card");
+
+    profileCards.forEach((profileCard)=>{
+        const aboutBtn = profileCard.querySelector(".btn-about");
+        const aboutText = profileCard.querySelector(".about-text");
+        const textContainer = profileCard.querySelector(".text");
+
+        aboutBtn.onclick = ()=>{
+            profileCards.forEach((item)=>{
+                if(item === profileCard){
+                    aboutText.classList.toggle('active-text');
+                }
+            })
+        }       
+    })
+</script>
+<!-- js end -->
+<!-- alert script -->
+<script>
+    const alertContainer = document.querySelector('.alert-container');
+    if(alertContainer.classList.contains('added')){
+        alertContainer.innerHTML=`<div class="alert alert-success alert-dismissible fade show" role="alert" data-aos="fade-in">Data Added
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+
+            </div>`;
+            // setDefault('added');
+        }else if(alertContainer.classList.contains('deleted')){
+            alertContainer.innerHTML=`<div class="alert alert-danger alert-dismissible fade show" role="alert" data-aos="fade-in">Data Deleted
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                
+                </div>`;
+                // setDefault('deleted');
+            }else if(alertContainer.classList.contains('updated')){
+                alertContainer.innerHTML=`<div class="alert alert-info alert-dismissible fade show" role="alert" data-aos="fade-in">Data Updated
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    
+                    </div>`;
+                    // setDefault('updated');
+                }else if(alertContainer.classList.contains('invalid-img')){
+                    alertContainer.innerHTML=`<div class="alert alert-danger alert-dismissible fade show" role="alert" data-aos="fade-in">Can't add data. Image size should be less than 200kb.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        
+                        </div>`;
+                        // setDefault('invalid-img');
+    }else{
+        alertContainer.innerHTML=``;
+    }
+          
+    setTimeout(()=>{
+        alertContainer.innerHTML=``;
+        alertContainer.classList.remove('added');
+        alertContainer.classList.remove('deleted');
+        alertContainer.classList.remove('updated');
+        alertContainer.classList.remove('invalid-img');
+    },3000)
+</script>
+
+
+
+
+
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script</title>
+</head>
+<body>
+    <div class="container" style="background-color: red;">
+        <div class="box" style="background-color: green;">
+
+        </div>
+    </div>
+
+
+
+
+
+
+<script>
+let div = document.querySelector('.box');
+
+
+
+let p = document.createElement("p");
+p.innerHTML = `child 1`;
+let span = document.createElement("span");
+span.innerHTML = `Child 2`;
+div.append(p);
+div.prepend(span);
+
+console.log(div.childNodes); // NodeList [ <span>, <p> ]
+
+</script>
+
+</body>
+</html>

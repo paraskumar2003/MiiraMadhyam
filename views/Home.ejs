@@ -1,0 +1,296 @@
+
+<%-include("partials/Header");-%>
+
+
+<div id="fadein">
+
+  <!-- Caraousel start -->
+  <div
+    id="carouselExampleSlidesOnly"
+    class="carousel slide    fadein"
+    data-bs-ride="carousel"
+    data-bs-pause="false"
+  >
+
+  <input type="number" class="hidden banner-count" value="<%=banners.length%>">
+    <div class="carousel-inner">
+
+      <% banners.forEach((item,index)=>{ %>
+        <div class="carousel-item">
+          <img src="<%=item.img%>" class="d-block w-100" alt="..." />
+        </div>
+
+    <%  }) %>
+      <div class="carousel-item">
+        <img src="../Images/thumbnail1.jpg" class="d-block w-100" alt="..." />
+        <div class="banner-text">
+               <div class="wrapper">
+                  <h1>Find best government <span class="highlight">schemes.</span></h1>
+                  <button class="btn" data-aos="fade-in"><a href="/schemes" class="carousel-btn">Find Now</a></button>
+               </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="../Images/thumbnail4.webp" class="d-block w-100" alt="..." />
+        <div class="banner-text">
+                 <div class="wrapper" data-aos="fade-down">
+                  <h1>Find the best <br><span class="highlight">Doctors.</span></h1>
+                 <button class="btn"><a href="/doctors" class="carousel-btn">Find Now</a></button>
+                 </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Caraousel end -->
+</div>
+
+
+
+<!-- Gallery  start -->
+<div class="gallery-container" data-aos="fade-in">
+
+<div class="heading-gallery">
+<h1>Our <span class="highlight">Gallery</span></h1>
+<div class="underline"></div>
+</div>
+
+
+
+
+  <div class="gallery-wrapper" data-aos="slide-up">
+    <!-- Gallery -->
+    
+<div class="flex" style="flex-wrap: nowrap;">
+  <div class="col-lg-4 col-md-4 col-sm-4 mb-4 mb-lg-0 gallery-row flex fdc">
+
+    <div class="gallery-img-container smaller-window">
+      <img src="<%=images[5].img%>"
+      alt="Boat on Calm Water"
+      class="w-100"
+    />
+    <div class="overlay">
+      <div class="image-desc">
+        <p><%=images[5].desc%></p>
+      </div>
+    </div>
+    </div>
+
+    <div class="gallery-img-container larger-window">
+      <img
+      src="<%=images[4].img%>"
+      class="w-100"
+      alt=""
+    />
+    <div class="overlay">
+      <div class="image-desc">
+        <p><%=images[4].desc%></p>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="col-lg-4 col-md-4 col-sm-4 mb-4 mb-lg-0 gallery-row flex fdc">
+
+    <div class="gallery-img-container larger-window">
+      <img src="<%=images[3].img%>"
+      alt="Boat on Calm Water"
+      class="w-100"
+    />
+    <div class="overlay">
+      <div class="image-desc">
+        <p><%=images[3].desc%></p>
+      </div>
+    </div>
+    </div>
+
+    <div class="gallery-img-container smaller-window">
+      <img
+      src="<%=images[2].img%>"
+      class="w-100"
+      alt=""
+    />
+    <div class="overlay">
+      <div class="image-desc">
+        <p><%=images[2].desc%></p>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="col-lg-4 col-md-4 col-sm-4 mb-4 mb-lg-0 gallery-row flex fdc">
+
+    <div class="gallery-img-container smaller-window">
+      <img src="<%=images[1].img%>"
+      alt="Boat on Calm Water"
+      class="w-100"
+    />
+    <div class="overlay">
+      <div class="image-desc">
+        <p><%=images[1].desc%></p>
+      </div>
+    </div>
+    </div>
+
+    <div class="gallery-img-container larger-window">
+      <img
+      src="<%=images[0].img%>"
+      class="w-100"
+      alt=""
+    />
+    <div class="overlay">
+      <div class="image-desc">
+        <p><%=images[0].desc%></p>
+      </div>
+    </div>
+    </div>
+  </div>
+  
+</div>
+<!-- Gallery -->
+  </div>
+
+
+  <div class="parallax-gallery parallax">
+  </div>
+
+</div>
+<!-- Gallery  end -->
+
+
+
+
+
+<!-- Schemes intro -->
+<div class="container-fluid scheme-section">
+  <div class="head">
+    <h1>Government <span class="highlight">Schemes</span></h1>
+    <div class="underline"></div>
+  </div>
+  <div class="middle flex jcb">
+    <% for( var i=0;i<schemesToRender.length;i++){ %>
+      <div class="card-custom flex fdc" data-aos="slide-left">
+        <div class="card-img">
+
+          <img src="data:image/<%=schemesToRender.img%>">
+        </div>
+        <div class="card-body">
+         <h1 class="card-title"><%= schemesToRender[i].name %></h1>
+          <div class="desc">
+               <p><%= schemesToRender[i].issueBy %></p>
+               <p><%= schemesToRender[i].keyFeature %></p>
+          </div>
+          <div class="card-links">
+            <!-- <a href="">Read More</a> -->
+            <a href="/schemes">View More</a>
+          </div>
+        </div>
+      </div>
+  <% } %> 
+  </div>
+  <div style="width:100%;" class="btn-view-div">
+    <button class="btn btn-view-more view-more-schemes" data-aos="fade-in">
+      <a href="/schemes">View More</a>
+    </button>
+  </div>
+  <div class="parallax-schemes parallax">
+  </div>
+</div>
+<!-- Schemes intro end-->
+<!-- Doctor intro -->
+<div class="container-fluid doctor-section">
+  <div class="head">
+    <h1><span class="highlight">Doctors</span></h1>
+    <div class="underline"></div>
+  </div>
+  
+  <div class="middle flex jcb">
+    <% for( var i=0;i<doctorsToRender.length;i++){ %>     
+        <div class="card-custom flex fdc" data-aos="slide-left">
+          <div class="card-img">
+            <img src="<%= doctorsToRender[i].img  %> ">
+          </div>
+          <div class="card-body">
+            <h1 class="card-title"><%= doctorsToRender[i].name %></h1>
+            <div class="desc">
+                 <p><%= doctorsToRender[i].expertise %></p>
+                 <p><%= doctorsToRender[i].experience %></p>
+            </div>
+            <div class="card-links">
+              <!-- <a href="">Read More</a> -->
+              <a href="/doctors">View More</a>
+            </div>
+          </div>
+        </div>
+  <% } %> 
+  </div>
+  <div style="width:100%;" class="btn-view-div">
+    <button class="btn btn-view-more view-more-schemes" data-aos="fade-in"    >
+      <a href="/doctors">View More</a>
+    </button>
+  </div>
+  <div class="parallax-gallery parallax">
+  </div>
+</div>
+<!-- Doctor intro end -->
+
+
+<!-- Slider Script -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+          slidesPerView: 3,
+          spaceBetween: 30,
+          slidesPerGroup: 1,
+          loop: true,
+          loopFillGroupWithBlank: true,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+        });
+      </script>
+
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+<!-- caraousel functionality -->
+<script>
+  let carouselInner = document.querySelector('.carousel-inner');
+  carouselInner.firstElementChild.classList.add('active'); 
+</script>
+<!-- carousel functionality end -->
+
+
+
+
+
+
+<div class="row about-container mx-auto">
+  <div class="col-lg-10 mx-auto">
+      <h3>A little bit</h3>
+      <h1>About Us</h1>
+      <div class="underline"></div>
+      <div class="about-data-container flex alfs">
+           <div class="about-img-container">
+              <img src="../Images/about.jpg" alt="">
+           </div>
+           <div class="about-page-details">
+              <h2>We Serve the Huminity</h2>
+              <p>MiiraMadhyam aim to provide aids to deprived sections and nurture the understanding of social, economical & political aspects on their lives.</p>
+              <p>
+                  We have a mission to harden their consciousness to enhance ability to get eqaul rights.</
+              </p>
+           </div>
+      </div>
+  </div>
+  
+</div>
+
+
+<%-include("partials/Footer");-%>
