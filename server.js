@@ -179,6 +179,7 @@ const adminSideData = async () => {
 }
 
 app.get('/login', function (req, res) {
+  console.log(req.body)
   res.render('Login')
 })
 
