@@ -19,7 +19,7 @@ const UploadToS3 =  async (file,callback)=>{
   
     const params = {
         Bucket: process.env.AWS_BUCKET_NAME,
-        Key: `${uuid()}.${fileType}`,
+        Key: `Images/${uuid()}.${fileType}`,
         Body: file.buffer
     }
   
